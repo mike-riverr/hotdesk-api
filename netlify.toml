@@ -1,5 +1,6 @@
 [build]
-  functions = "functions"
+  # No build command since you are deploying only functions
+  functions = "functions"  # Point to your functions directory
 
 [[redirects]]
   from = "/working-location"
