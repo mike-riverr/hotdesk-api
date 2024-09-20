@@ -1,8 +1,9 @@
 [build]
-  # No build command since you are deploying only functions
-  functions = "functions"  # Point to your functions directory
+  # Tell Netlify where the serverless functions are located
+  functions = "functions"
 
 [[redirects]]
+  # Redirect all requests to the serverless function
   from = "/working-location"
   to = "/.netlify/functions/working-location"
   status = 200
