@@ -1,9 +1,6 @@
 [build]
-  # Tell Netlify where the serverless functions are located
+  # Tell Netlify where to find the serverless functions
   functions = "functions"
 
-[[redirects]]
-  # Redirect all requests to the serverless function
-  from = "/working-location"
-  to = "/.netlify/functions/working-location"
-  status = 200
+# No publish directory needed, so no build command required
+
