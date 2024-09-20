@@ -9,8 +9,15 @@ const CALENDAR_ID = 'primary';  // Default calendar
 const SERVICE_ACCOUNT_PATH = path.resolve(__dirname, 'service-account-key.json');
 
 // Load the service account key
-const serviceAccount = JSON.parse(fs.readFileSync(SERVICE_ACCOUNT_PATH, 'utf8'));
+//const serviceAccount = JSON.parse(fs.readFileSync(SERVICE_ACCOUNT_PATH, 'utf8'));
 
+
+const serviceAccount = {
+    client_email: process.env.SERVICE_ACCOUNT_EMAIL,
+    private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'), // Fix newlines
+  };
+
+  
 // Create a JWT client for machine-to-machine authentication
 const jwtClient = new google.auth.JWT(
   serviceAccount.client_email,
